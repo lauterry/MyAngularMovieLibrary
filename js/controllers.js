@@ -1,4 +1,9 @@
 function MovieListCtrl($scope) {
+
+    $scope.search = function(movieToSearch){
+        alert("I will look for a movie containing the word " + movieToSearch);
+    }
+
     $scope.movies = [
         {"title":"Avatar",
             "year":2009,

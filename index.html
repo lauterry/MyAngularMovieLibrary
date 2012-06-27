@@ -6,16 +6,25 @@
     <script type="text/javascript" src="js/controllers.js"></script>
 </head>
 <body ng-app>
-<div style="margin-left: 50px" ng-controller="MovieListCtrl">
-    <h1>I have {{movies.length}} movies</h1>
-    <ul>
-        <li ng-repeat="movie in movies">
-            <h3>{{movie.title}}</h3>
-            <p>Year : {{movie.year}}</p>
-            <p>Director : {{movie.directors}}</p>
-            <p>Stars : {{movie.stars}}</p>
-        </li>
-    </ul>
+<div ng-controller="MovieListCtrl">
+    <div style="margin-left: 50px">
+        <input type="text" ng-model="movieToSearch"></input>
+        <button ng-click="search(movieToSearch)">Search</button>
+    </div>
+    <div style="margin-left: 50px">
+        <h1>I have {{movies.length}} movies</h1>
+        <ul>
+            <li ng-repeat="movie in movies">
+                <h3>{{movie.title}}</h3>
+
+                <p>Year : {{movie.year}}</p>
+
+                <p>Director : {{movie.directors}}</p>
+
+                <p>Stars : {{movie.stars}}</p>
+            </li>
+        </ul>
+    </div>
 </div>
 </body>
 </html>
