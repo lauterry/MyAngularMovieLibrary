@@ -1,21 +1,24 @@
-function MovieListCtrl($scope) {
+angular.module("MyAppModule", ['ngResource']).
+    config(['$routeProvider', function($routeProvider) {
+    $routeProvider.
+        when('/movies', {templateUrl: 'partials/movies.html',   controller: MovieListCtrl}).
+        when('/movies/:code', {templateUrl: 'partials/movie-detail.html', controller: MovieDetailCtrl}).
+        otherwise({redirectTo: '/movies'});
+}]);
+
+function MovieListCtrl($scope, $resource) {
+
+    $scope.allocine = $resource("http://api.allocine.fr/rest/v3/:action",
+        {action:'search', partner:'YW5kcm9pZC12M3M', format:'json', q:'love', callback:'JSON_CALLBACK'},
+        {get:{method:'JSONP'}}
+    );
 
     $scope.search = function(movieToSearch){
-        alert("I will look for a movie containing the word " + movieToSearch);
+        $scope.movies = $scope.allocine.get({q:movieToSearch});
     }
 
-    $scope.movies = [
-        {"title":"Avatar",
-            "year":2009,
-            "directors":"James Cameron",
-            "stars":"Sam Worthington, Zoe Saldana and Sigourney Weaver"},
-        {"name":"The Grudge",
-            "year":2004,
-            "directors":"Takashi Shimizu",
-            "stars":"Sarah Michelle Gellar, Jason Behr and Clea DuVall"},
-        {"name":"The Expandables",
-            "year":2010,
-            "directors":"Sylvester Stallone",
-            "stars":"Sylvester Stallone, Jason Statham and Jet Li"}
-    ];
+}
+
+function MovieDetailCtrl($scope, $routeParams) {
+   $scope.code = $routeParams.code;
 }
