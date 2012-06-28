@@ -1,1 +1,9 @@
-<p>You have requested more details for the movie with identifier {{code}}<p>
+<h1>{{detail.movie.originalTitle}}</h1>
+<img src="{{detail.movie.poster.href}}" style="height:250px;">
+<div style="display:inline-block; width: 700px; margin-left: 50px">
+    <p>Production Year : {{detail.movie.productionYear}}</p>
+    <p>Released date : {{detail.movie.release.releaseDate}}</p>
+    <p>Directors : {{detail.movie.castingShort.directors}}</p>
+    <p>Actors : {{detail.movie.castingShort.actors}}</p>
+    <p>Synopsis : {{detail.movie.synopsisShort }}</p>
+</div>

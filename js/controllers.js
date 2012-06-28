@@ -7,7 +7,6 @@ angular.module("MyAppModule", ['ngResource']).
 }]);
 
 function MovieListCtrl($scope, $resource) {
-
     $scope.allocine = $resource("http://api.allocine.fr/rest/v3/:action",
         {action:'search', partner:'YW5kcm9pZC12M3M', format:'json', q:'love', callback:'JSON_CALLBACK'},
         {get:{method:'JSONP'}}
@@ -16,9 +15,13 @@ function MovieListCtrl($scope, $resource) {
     $scope.search = function(movieToSearch){
         $scope.movies = $scope.allocine.get({q:movieToSearch});
     }
-
 }
 
-function MovieDetailCtrl($scope, $routeParams) {
-   $scope.code = $routeParams.code;
+function MovieDetailCtrl($scope, $resource, $routeParams) {
+    $scope.allocine = $resource("http://api.allocine.fr/rest/v3/:action",
+        {action:'movie', partner:'YW5kcm9pZC12M3M', format:'json', profile:'small', code:'0', callback:'JSON_CALLBACK'},
+        {get:{method:'JSONP'}}
+    );
+
+   $scope.detail = $scope.allocine.get({code:$routeParams.code});
 }
