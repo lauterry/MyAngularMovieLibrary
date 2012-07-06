@@ -1,4 +1,4 @@
-function movieListCtrl($scope){
+function movieListCtrl($scope, $routeParams, $location){
     $scope.movies = [
         {"title":"Avatar",
             "year":2009,
@@ -15,16 +15,19 @@ function movieListCtrl($scope){
     ];
 }
 
-
-function movieEditCtrl($scope){
+function movieEditCtrl($scope, $routeParams, $location){
+    var newMovie = false;
+    if($routeParams.contactId){
+        $scope.movie = $scope.movies[$routeParams.contactId];
+    } else {
+        $scope.movie = {};
+        newMovie = true;
+    }
     $scope.saveContact = function(){
-        $scope.movies.push(
-            {
-                "title":$scope.title,
-                "year":$scope.year,
-                "directors":$scope.directors,
-                "stars":$scope.actors
-            }
-        );
+        if(newMovie){
+            $scope.movies.push($scope.contact);
+        }
+        $location.path('/list');
     }
 }
+

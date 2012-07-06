@@ -1,0 +1,32 @@
+<form id="contactForm" class="form-horizontal" name="contactForm" ng-submit="saveContact()">
+    <div class="control-group" ng-class="{error: contactForm.title.$invalid}">
+        <label class="control-label">Titre</label>
+        <div class="controls">
+            <input name="title" type="text" ng-model="movie.title" required>
+            <p class="help-inline" ng-show="contactForm.title.$error.required">Le titre est requis</p>
+        </div>
+    </div>
+    <div class="control-group" ng-class="{error: contactForm.year.$invalid}">
+        <label class="control-label">Année</label>
+        <div class="controls">
+            <input name="year" type="text" ng-model="movie.year" ng-maxlength="4" ng-pattern="/^[0-9]+$/">
+            <p class="help-inline" ng-show="contactForm.year.$error.maxlength">Trop de caractères.</p>
+            <p class="help-inline" ng-show="contactForm.year.$error.pattern">Lettre non acceptée</p>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">Directeurs</label>
+        <div class="controls">
+            <input name="directors" type="text" ng-model="movie.directors">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">Acteurs</label>
+        <div class="controls">
+            <input name="actors" type="text" ng-model="movie.stars">
+        </div>
+    </div>
+    <div class="form-actions">
+        <input type="submit" class="btn btn-primary" value="Enregistrer" ng-disabled="contactForm.$invalid">
+    </div>
+</form>
