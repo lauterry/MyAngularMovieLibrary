@@ -1,0 +1,9 @@
+<ul class="unstyled">
+    <li class="well" ng-repeat="movie in movies">
+        <h3>{{movie.title}}</h3>
+        <p>Year : {{movie.year}}</p>
+        <p>Director : {{movie.directors}}</p>
+        <p>Stars : {{movie.stars}}</p>
+        <a class="btn btn-primary" ng-href="#/edit/{{$index}}">Editer</a>
+    </li>
+</ul>
