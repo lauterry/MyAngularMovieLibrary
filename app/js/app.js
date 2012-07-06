@@ -8,4 +8,13 @@ angular.module("myApp", [])
         templateUrl: 'partials/movie-list.html'
     });
     $routeProvider.otherwise({ redirectTo: '/list' });
-}]);
+}]).directive('movieWidget', function(){
+        return {
+            restrict: 'E',
+            replace: true,
+            templateUrl:'templates/movieWidget.html',
+            scope:{
+                movie: '='
+            }
+        }
+});

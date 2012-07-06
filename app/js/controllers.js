@@ -25,7 +25,7 @@ function movieEditCtrl($scope, $routeParams, $location){
     }
     $scope.saveContact = function(){
         if(newMovie){
-            $scope.movies.push($scope.contact);
+            $scope.movies.push($scope.movie);
         }
         $location.path('/list');
     }
