@@ -7,6 +7,9 @@ angular.module("myApp", [])
     $routeProvider.when('/list', {
         templateUrl: 'partials/movie-list.html'
     });
+    $routeProvider.when('/end', {
+        templateUrl: 'partials/end.html'
+    });
     $routeProvider.otherwise({ redirectTo: '/list' });
 }]).directive('movieWidget', function(){
         return {
