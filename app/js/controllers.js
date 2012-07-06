@@ -14,3 +14,17 @@ function movieListCtrl($scope){
             "stars":"Sylvester Stallone, Jason Statham and Jet Li"}
     ];
 }
+
+
+function movieEditCtrl($scope){
+    $scope.saveContact = function(){
+        $scope.movies.push(
+            {
+                "title":$scope.title,
+                "year":$scope.year,
+                "directors":$scope.directors,
+                "stars":$scope.actors
+            }
+        );
+    }
+}

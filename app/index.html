@@ -28,6 +28,37 @@
                         </li>
                     </ul>
                 </div>
+                <div class="span6 offset1" ng-controller="movieEditCtrl">
+                    <form id="contactForm" class="form-horizontal" name="contactForm" ng-submit="saveContact()">
+                        <div class="control-group">
+                            <label class="control-label">Titre</label>
+                            <div class="controls">
+                                <input name="title" type="text" ng-model="title">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Année</label>
+                            <div class="controls">
+                                <input name="year" type="text" ng-model="year">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Directeurs</label>
+                            <div class="controls">
+                                <input name="directors" type="text" ng-model="directors">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Acteurs</label>
+                            <div class="controls">
+                                <input name="actors" type="text" ng-model="actors">
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <input type="submit" class="btn btn-primary" value="Ajouter">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
