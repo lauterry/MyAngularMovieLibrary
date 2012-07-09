@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp">
+<head>
+    <meta http-equiv="Content-Type" content="charset=utf-8">
+    <title>My Angular Movie Library</title>
+    <script type="text/javascript" src="http://code.angularjs.org/1.0.1/angular-1.0.1.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<ng:include src="'templates/header.html'"></ng:include>
+<div class="container" ng-controller="movieListCtrl">
+    <div class="row">
+        <div class="span12">
+            <div ng-view></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

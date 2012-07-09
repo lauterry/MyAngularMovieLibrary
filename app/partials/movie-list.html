@@ -1,0 +1,12 @@
+<div class="page-header">
+    <h1>My Movie Library
+        <small>I have {{movies.length}} movies</small>
+        <a class="btn btn-primary" href="#/edit/">Ajouter</a>
+    </h1>
+</div>
+<ul class="unstyled">
+    <li class="well" ng-repeat="movie in movies">
+        <movie-widget movie="movie"></movie-widget>
+        <a class="btn btn-primary" ng-href="#/edit/{{$index}}">Editer</a>
+    </li>
+</ul>
