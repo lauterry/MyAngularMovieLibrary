@@ -6,6 +6,9 @@ Ce projet est une application web de gestion de film simple développer avec Ang
 Le but de ce projet est d'illustrer les différentes concepts clés d'AngularJS qui font sa force et sa simplicité.
 Ce projet a été présenté au BOF de SFEIR dans le cadre d'un live coding sur AngularJS.
 
+Un tutorial pas à pas existe en anglais. Cette application sert de support pour ce tutorial.
+[Accéder à ce tutorial](http://data-prez.appspot.com/deck/id=agtzfmRhdGEtcHJlenIRCxIJU2xpZGVEZWNrGPvJBAw&slide=2)
+
 <h3>Pré-requis :</h3>
 Installer node.js
 
